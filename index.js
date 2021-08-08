@@ -46,11 +46,11 @@ const goHome = () => {
   togglePlayer();
 };
 
-const playScreenSaver = () => {
+const playScreenSaver = async () => {
   togglePlayer();
   preferredVideos = hasPreference() ? getPreferredVideos() : getAllVideos();
-  enterFullscreen();
   updateVideoSrc();
+  await enterFullscreen();
   showShortcuts();
 };
 

@@ -1,5 +1,10 @@
 * {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+code {
+  font-family: monospace;
 }
 
 body,
@@ -21,42 +26,69 @@ video {
   text-align: center;
 }
 
+.home h1 {
+  padding-top: 12rem;
+  font-size: 4rem;
+  font-family: "Ultra", serif;
+}
+
 .hidden {
   display: none;
 }
 
 .preference {
-  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 1rem 10vw 3rem 10vw;
 }
 
 .tag,
 .play {
   border-style: none;
-  border-radius: 1rem;
+  border-radius: 2rem;
 }
 
 .tag {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
   border: 1px solid lightblue;
-  height: 2rem;
-  padding: 0 1rem;
   background-color: transparent;
+  font-weight: bold;
+  transition: all 0.3s ease-out;
 }
 
 .tag.active {
   background-color: lightblue;
 }
 
+.tag:hover {
+  background-color: lightblue;
+  opacity: 0.7;
+}
+
 .play {
+  font-size: 1.5rem;
   background-color: tomato;
   color: white;
   padding: 1rem 4rem;
+  font-weight: bolder;
 }
 
-.key {
-  border: 1px solid #fff;
-  padding: 0.2rem 0.75rem;
-  border-radius: 0.25rem;
-  margin-right: 0.5rem;
+.play::after {
+  content: " \279C";
+  display: inline-block;
+  padding-left: 0.8rem;
+  transition: transform 0.3s ease-out;
+}
+
+.play:hover::after {
+  transform: translateX(0.4rem);
+}
+
+.play:hover {
+  background-color: rgb(255, 78, 46);
 }
 
 /* Modal */
@@ -94,4 +126,11 @@ video {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+}
+
+.key {
+  border: 1px solid #fff;
+  padding: 0.2rem 0.75rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
 }

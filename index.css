@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+figure {
+  margin: 0;
+}
+
+.home,
+video {
+  width: 100vw;
+  height: 100vh;
+}
+
+video {
+  object-fit: cover;
+}
+
+.home {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.preference {
+  padding: 1rem 0;
+}
+
+.tag,
+.play {
+  border-style: none;
+  border-radius: 1rem;
+}
+
+.tag {
+  border: 1px solid lightblue;
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: transparent;
+}
+
+.tag.active {
+  background-color: lightblue;
+}
+
+.play {
+  background-color: tomato;
+  color: white;
+  padding: 1rem 4rem;
+}

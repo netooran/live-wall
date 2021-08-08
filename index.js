@@ -12,6 +12,7 @@ const play = document.querySelector("button.play");
 const home = document.querySelector(".home");
 const player = document.querySelector(".player");
 const video = document.querySelector("video");
+const shortcuts = document.getElementById("shortcuts");
 
 const updateVideoSrc = () => (video.src = preferredVideos[playingVideo]);
 
@@ -27,12 +28,30 @@ const togglePreference = (event) => {
   preferences[preferences.has(preference) ? "delete" : "add"](preference);
 };
 
-const playScreenSaver = () => {
+const showShortcuts = () => {
+  shortcuts.style.display = "block";
+  setTimeout(() => {
+    shortcuts.style.display = "none";
+  }, 5000);
+};
+
+const togglePlayer = () => {
   home.classList.toggle("hidden");
   player.classList.toggle("hidden");
+};
 
+const enterFullscreen = () => player.requestFullscreen();
+
+const goHome = () => {
+  togglePlayer();
+};
+
+const playScreenSaver = () => {
+  togglePlayer();
   preferredVideos = hasPreference() ? getPreferredVideos() : getAllVideos();
+  enterFullscreen();
   updateVideoSrc();
+  showShortcuts();
 };
 
 const playNext = () => {
@@ -41,7 +60,15 @@ const playNext = () => {
   updateVideoSrc();
 };
 
+const handleKeyboardShortcut = (e) => {
+  const key = e.which || e.keyCode;
+  if (key === 13) return enterFullscreen();
+  if (key == 72) return goHome();
+  if (key == 191) return showShortcuts();
+};
+
 const attachEvents = () => {
+  document.addEventListener("keyup", handleKeyboardShortcut);
   tags.forEach((tag) => tag.addEventListener("click", togglePreference));
   play.addEventListener("click", playScreenSaver);
   video.addEventListener("ended", playNext);

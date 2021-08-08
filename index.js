@@ -1,7 +1,13 @@
 const videos = {
-  space: ["videos/planet-earth-in-close-up-view.mp4"],
-  nature: ["videos/waterfalls-from-front.mp4", "videos/waves-from-above.mp4"],
-  dark: ["videos/cabin-at-night.mp4", "videos/white-smoke.mp4"],
+  space: [
+    "https://player.vimeo.com/external/422333391.hd.mp4?s=094dd583d2248cffcec280ff0d50eba397d2bd6f\u0026profile_id=170\u0026oauth2_token_id=57447761",
+  ],
+  nature: [
+    "https://player.vimeo.com/external/517619980.hd.mp4?s=dcab905de99f4814ba133b1b89347626363473b3\u0026profile_id=175\u0026oauth2_token_id=57447761",
+  ],
+  dark: [
+    "https://player.vimeo.com/external/365128226.hd.mp4?s=cc1d27493cb4e8c4b5b12ba1aed7b59a838099f5\u0026profile_id=175\u0026oauth2_token_id=57447761",
+  ],
 };
 const preferences = new Set();
 let preferredVideos = [];
